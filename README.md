@@ -1,17 +1,28 @@
-# trips_bookings
+# Trips & Bookings
 
-A new Flutter project.
+Trips & Bookings is a Flutter mobile app for viewing mock ride bookings, searching trips, and updating booking status locally. It is built for Android with Flutter 3.x, Dart null safety, and a simple Provider-based state layer.
 
-## Getting Started
+## Screens Overview
 
-This project is a starting point for a Flutter application.
+- Login: email and password form with inline validation and password visibility control.
+- Home: searchable trip list with status badges and provider-backed live data.
+- Trip Details: complete trip information, guarded status transitions, snackbar feedback, and a visual timeline.
 
-A few resources to get you started if this is your first Flutter project:
+## State Management
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+The app uses Provider through `TripsProvider`. Provider is lightweight for this local mock-data workflow, keeps the trip list in one observable place, and lets both Home and Trip Details rebuild immediately when a trip status changes.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Standout Feature
+
+Trip Details includes an animated status timeline that visualizes the booking journey. The current status circle fills with the matching status color, inactive states stay grey, and the connecting line animates over 400ms when the status changes. This makes the status update feel closer to a real travel or ride-booking experience than a plain dropdown.
+
+## How To Run
+
+```bash
+flutter pub get
+flutter run
+```
+
+## APK Location
+
+The release APK is generated at `build/app/outputs/flutter-apk/app-release.apk`. For submission, place or attach it from the `releases/` folder if your workflow requires a separate release artifact directory.
