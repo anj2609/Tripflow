@@ -25,4 +25,4 @@ flutter run
 
 ## APK Location
 
-The release APK is generated at `build/app/outputs/flutter-apk/app-release.apk`. For submission, place or attach it from the `releases/` folder if your workflow requires a separate release artifact directory.
+The release APK is generated at `build/app/outputs/flutter-apk/app-release.apk`.
