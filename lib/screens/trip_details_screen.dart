@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../models/trip.dart';
 import '../providers/trips_provider.dart';
 import '../widgets/status_badge.dart';
+import '../widgets/status_timeline.dart';
 
 class TripDetailsScreen extends StatelessWidget {
   const TripDetailsScreen({super.key, required this.tripId});
@@ -77,6 +78,13 @@ class TripDetailsScreen extends StatelessWidget {
               }
               _updateStatus(context, status);
             },
+          ),
+          const SizedBox(height: 20),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: StatusTimeline(status: trip.status),
+            ),
           ),
           const SizedBox(height: 20),
           FilledButton.icon(
